@@ -79,5 +79,19 @@ textarea {
 
 i {
   color: #ffffff;
+ }
+
+/* Clear Button */
+.clearbtn {
+  background-color: #06aed5;
+  color: #ffffff;
  
+}
+
+.clearbtn:hover {
+  background-color: #ff6961;
+}
+
+.container {
+  text-align: center;
 }
