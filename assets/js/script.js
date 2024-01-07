@@ -61,9 +61,7 @@ saveButton.on("click", function(event){
       let key = parseInt($(this).attr("id"))
       let description = $(this).find(".description").val()
      localStorage.setItem(key , description)
-  console.log((description))
-  
-      }) 
+     }) 
     });
 
 
