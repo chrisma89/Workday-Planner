@@ -91,6 +91,7 @@ $(".clearbtn").on("click" , function(){
   $(".time-block").each(function(){
     $(this).children().eq(1).text("")
   })
+  location.reload()
 })
 
 
