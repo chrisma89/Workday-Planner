@@ -16,9 +16,7 @@ setInterval (displayTime, 1000)
 function updateHourblocks (){
   const currentHour = parseInt (dayjs().hour())
   console.log(currentHour)
-//   const hour = dayjs().format("h a")
-//   console.log(hour)
-// console.log(typeof(hour))
+
   
    const timeBlock =  $(".time-block")
   timeBlock.each(function(){
@@ -44,7 +42,7 @@ function updateHourblocks (){
   })}
 
   updateHourblocks()
-// setInterval(updateHourblocks, 3600000)
+setInterval(updateHourblocks, 3600000)
 
 
 // update time-blocks every hour
