@@ -88,7 +88,9 @@ retrieveData()
 
 $(".clearbtn").on("click" , function(){
   localStorage.clear();
-  retrieveData();
+  $(".time-block").each(function(){
+    $(this).children().eq(1).text("")
+  })
 })
 
 
