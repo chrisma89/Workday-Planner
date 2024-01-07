@@ -84,6 +84,13 @@ function retrieveData(){
 retrieveData()
 
 
+// function to clear local storage and events on page
+
+$(".clearbtn").on("click" , function(){
+  localStorage.clear();
+  retrieveData();
+})
+
 
 
 
