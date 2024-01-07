@@ -14,9 +14,11 @@ setInterval (displayTime, 1000)
 
 // Color-coded time block based on past, present, and future 
 function updateHourblocks (){
-  const currentHour = dayjs().hour()
+  const currentHour = parseInt (dayjs().hour())
   console.log(currentHour)
-
+//   const hour = dayjs().format("h a")
+//   console.log(hour)
+// console.log(typeof(hour))
   
    const timeBlock =  $(".time-block")
   timeBlock.each(function(){
@@ -24,26 +26,71 @@ function updateHourblocks (){
     let plannerHour = parseInt($(this).attr("id"))
     console.log(plannerHour)
  
-    if (plannerHour < currentHour){
-      $(this).addClass("past")
-      $(this).removeClass("present future")
     
-    }
-    else if (plannerHour === currentHour){
+    if (plannerHour === currentHour){
       $(this).addClass("present")
       $(this).removeClass("future past")
     }
-    else if ( plannerHour > currentHour){
+    else if ( plannerHour < currentHour){
+      $(this).addClass("past")
+      $(this).removeClass("future present")
+
+    }
+    else if(plannerHour > currentHour){
       $(this).addClass("future")
       $(this).removeClass("past present")
-
+    
     }
   })}
 
-updateHourblocks()
+  updateHourblocks()
+// setInterval(updateHourblocks, 3600000)
 
 
 // update time-blocks every hour
 // setInterval(updateHourblocks, 15000)
 
 // Allow a user to enter an event when they click a time block
+const saveButton = $(".btn")
+
+saveButton.on("click", function(event){
+  event.preventDefault()
+  saveUserEvent()
+})
+
+// function saveUserEvent () {
+
+  
+//   let UserInput = $(".description").val()
+//   let id= $("#user-input")
+//   // console.log(UserInput)
+//   localStorage.setItem("user-input", UserInput[i])
+
+  
+
+//   // let savedInput = localStorage.getItem("user-input")
+//   // UserInput.textContent = savedInput
+//   }
+  // retrieveData()
+function saveUserEvent (){
+$(".description").each(function(i){
+  let userId = "user-input-" +i
+let UserInput = $(this).val()})
+localStorage.setItem(userId, UserInput)
+}
+
+
+
+// function retrieveData (UserInput){
+//   let savedInput = localStorage.getItem(UserInput)
+
+//   if(UserInput) {
+//     UserInput.text(savedInput)
+//   }
+  
+// }
+// $(function(){
+//   retrieveData()
+// })
+
+
