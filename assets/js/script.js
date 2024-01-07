@@ -1,4 +1,4 @@
-// Current Date display
+// Current Date display at the top of the calender when a user opens the planner.
 const currentDay = $("#currentDay");
 currentDay.text(dayjs().format("dddd, MMMM D, YYYY"))
 
@@ -12,20 +12,18 @@ displayTime()
 // update clock every second
 setInterval (displayTime, 1000)
 
-console.log("ding")
-
+// Color-coded time block based on past, present, and future 
 function updateHourblocks (){
-  currentHour = dayjs().hour()
+  const currentHour = dayjs().hour()
   console.log(currentHour)
 
-  // const plannerHour =$(".time-block")
-  // console.log(plannerHour)
+  
    const timeBlock =  $(".time-block")
-  $(timeBlock).each(function(){
+  timeBlock.each(function(){
 
     let plannerHour = parseInt($(this).attr("id"))
     console.log(plannerHour)
-  //  console.log(timeBlock)
+ 
     if (plannerHour < currentHour){
       $(this).addClass("past")
       $(this).removeClass("present future")
@@ -40,8 +38,12 @@ function updateHourblocks (){
       $(this).removeClass("past present")
 
     }
-
-
-
   })}
+
 updateHourblocks()
+
+
+// update time-blocks every hour
+// setInterval(updateHourblocks, 15000)
+
+// Allow a user to enter an event when they click a time block
