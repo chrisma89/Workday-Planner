@@ -46,15 +46,26 @@ setInterval(updateHourblocks, 3600000)
 
 
 // update time-blocks every hour
-// setInterval(updateHourblocks, 15000)
+setInterval(updateHourblocks, 3600000)
 
 // Allow a user to enter an event when they click a time block
 const saveButton = $(".btn")
+const textArea = $(".textarea")
+const timeBlockText = $(".time-block")
+const eventDescription = $(".description").val()
 
 saveButton.on("click", function(event){
   event.preventDefault()
-  saveUserEvent()
-})
+  
+
+    $(".time-block").each( function(){
+      let key = parseInt($(this).attr("id"))
+      let description = $(this).find(".description").val()
+     localStorage.setItem(key , description)
+      }) 
+    })
+
+
 
 // function saveUserEvent () {
 
@@ -69,13 +80,13 @@ saveButton.on("click", function(event){
 //   // let savedInput = localStorage.getItem("user-input")
 //   // UserInput.textContent = savedInput
 //   }
-  // retrieveData()
-function saveUserEvent (){
-$(".description").each(function(i){
-  let userId = "user-input-" +i
-let UserInput = $(this).val()})
-localStorage.setItem(userId, UserInput)
-}
+//   // retrieveData()
+// function saveUserEvent (){
+// $(".description").each(function(i){
+//   let userId = "user-input-" +i
+// let UserInput = $(this).val()})
+// localStorage.setItem(userId, UserInput)
+// }
 
 
 
