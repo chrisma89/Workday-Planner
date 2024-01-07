@@ -3,13 +3,13 @@
 
 This is a one day event planner that can be used to create and save events for scheduling, planning and organising a working day from 9 am to 5pm.
 
-Upon loading the page, the day and time will automatically update to the current UTC time. This has been made possible through jquery and dayjs.
+Upon loading the page, the day and time will automatically update to the current time. This has been made possible through jquery and dayjs.
 
-The user can view a colour-coded planner ( grey for past time, red for current time and green for future time), that can used populate the planner with events. The user will need to click on the save button at the end of eah time block to then be able to see the event. 
+The user can view a colour-coded planner ( grey for past time, red for current time and green for future time), that can used to effectively populate the planner with events. The user will need to click on the save button at the end of each time block to then be able to see the event. 
 
 The save button takes on a event-listener powered by jquery to store the user's event input to the local storage. This cretaes the ability to retrieve the data back on to the page and enables viewing of the event until when the storage is cleared.
 
-The page also has a clear events button as an extra feature, which carries an event listener. Upon clicking, the lcoal storage and the events page is cleared and the page reloads.
+The page also has a clear events button as an extra feature, which carries an event listener. Upon clicking, the local storage and the events page are cleared and the page reloads.
 
 
 ## Built with
