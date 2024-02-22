@@ -38,7 +38,7 @@ This repository has been built using
 
 ### Installation
 
-This webpage can be rendered by visiting the url : https://chrisma89.github.io/Chrisma-Workday-Planner/
+This webpage can be rendered by visiting the url : https://chrisma89.github.io/Workday-Planner/
 The code can be viewed at github: https://github.com/chrisma89/Chrisma-Workday-Planner
 
 ### Usage
